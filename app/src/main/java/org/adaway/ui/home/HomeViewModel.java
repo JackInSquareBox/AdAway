@@ -172,6 +172,23 @@ public class HomeViewModel extends AndroidViewModel {
         });
     }
 
+    public void syncWithoutApply() {
+        if (isTrue(this.pending)) {
+            return;
+        }
+        EXECUTORS.networkIO().execute(() -> {
+            try {
+                this.pending.postValue(true);
+                this.sourceModel.retrieveHostsSources();
+            } catch (HostErrorException exception) {
+                Timber.w(exception, "Failed to sync.");
+                this.error.postValue(exception.getError());
+            } finally {
+                this.pending.postValue(false);
+            }
+        });
+    }
+
     public void enableAllSources() {
         EXECUTORS.diskIO().execute(() -> {
             if (this.sourceModel.enableAllSources()) {

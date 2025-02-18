@@ -135,6 +135,7 @@ public class HomeActivity extends AppCompatActivity {
             // Prepare VPN
             this.prepareVpnLauncher.launch(prepareIntent);
         }
+        this.homeViewModel.syncWithoutApply();
     }
 
     private void checkUpdateAtStartup() {

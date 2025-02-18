@@ -126,9 +126,12 @@ public class HomeActivity extends AppCompatActivity {
         Intent prepareIntent;
         if (adBlockMethod == UNDEFINED) {
             // Start welcome activity
-            startActivity(new Intent(this, WelcomeActivity.class));
-            finish();
-        } else if (adBlockMethod == VPN && (prepareIntent = VpnService.prepare(this)) != null) {
+//            startActivity(new Intent(this, WelcomeActivity.class));
+//            finish();
+
+            PreferenceHelper.setAbBlockMethod(this, AdBlockMethod.VPN);
+        }
+        if (adBlockMethod == VPN && (prepareIntent = VpnService.prepare(this)) != null) {
             // Prepare VPN
             this.prepareVpnLauncher.launch(prepareIntent);
         }

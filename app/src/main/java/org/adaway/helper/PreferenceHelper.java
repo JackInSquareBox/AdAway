@@ -211,14 +211,16 @@ public final class PreferenceHelper {
     }
 
     public static AdBlockMethod getAdBlockMethod(Context context) {
-        SharedPreferences prefs = context.getSharedPreferences(
-                Constants.PREFS_NAME,
-                Context.MODE_PRIVATE
-        );
-        return AdBlockMethod.fromCode(prefs.getInt(
-                context.getString(R.string.pref_ad_block_method_key),
-                context.getResources().getInteger(R.integer.pref_ad_block_method_key_def)
-        ));
+        return AdBlockMethod.VPN;
+
+//        SharedPreferences prefs = context.getSharedPreferences(
+//                Constants.PREFS_NAME,
+//                Context.MODE_PRIVATE
+//        );
+//        return AdBlockMethod.fromCode(prefs.getInt(
+//                context.getString(R.string.pref_ad_block_method_key),
+//                context.getResources().getInteger(R.integer.pref_ad_block_method_key_def)
+//        ));
     }
 
     public static void setAbBlockMethod(Context context, AdBlockMethod method) {
@@ -227,7 +229,7 @@ public final class PreferenceHelper {
                 Context.MODE_PRIVATE
         );
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putInt(context.getString(R.string.pref_ad_block_method_key), method.toCode());
+        editor.putInt(context.getString(R.string.pref_ad_block_method_key), AdBlockMethod.VPN.toCode());
         editor.apply();
     }
 

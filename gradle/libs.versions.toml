@@ -1,6 +1,6 @@
 [versions]
 # Build
-appName = "6.1.4"
+appName = "0.0.1"
 appCode = "60104" # Read x.yy.zz to match version name
 gradle = "8.7.2"
 # Common

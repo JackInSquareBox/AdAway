@@ -16,7 +16,7 @@ repositories {
 android {
     compileSdk 34
     ndkVersion '27.2.12479018'
-    namespace 'org.adaway'
+    namespace 'org.simpleadblocker'
 
     defaultConfig {
         minSdk 26

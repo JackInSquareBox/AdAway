@@ -109,6 +109,12 @@ public abstract class AppDatabase extends RoomDatabase {
         source3.setLabel(context.getString(R.string.hosts_peterlowe_source));
         source3.setUrl("https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext");
         hostsSourceDao.insert(source3);
+        // Custom hosts
+        // Pete Lowe
+        HostsSource source4 = new HostsSource();
+        source4.setLabel(context.getString(R.string.hosts_custom_source));
+        source4.setUrl("https://raw.githubusercontent.com/JackInSquareBox/AdAway/develop/custom_hosts/custom_hosts.txt");
+        hostsSourceDao.insert(source4);
     }
 
     /**

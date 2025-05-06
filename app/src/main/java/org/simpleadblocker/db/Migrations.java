@@ -101,6 +101,7 @@ final class Migrations {
             database.execSQL("UPDATE `hosts_sources` SET `label` = \"AdAway official hosts\" WHERE `url` = \"https://adaway.org/hosts.txt\"");
             database.execSQL("UPDATE `hosts_sources` SET `label` = \"StevenBlack Unified hosts\" WHERE `url` = \"https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts\"");
             database.execSQL("UPDATE `hosts_sources` SET `label` = \"Pete Lowe blocklist hosts\" WHERE `url` = \"https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext\"");
+            database.execSQL("UPDATE `hosts_sources` SET `label` = \"Custom blocklist hosts\" WHERE `url` = \"https://raw.githubusercontent.com/JackInSquareBox/AdAway/develop/custom_hosts/custom_hosts.txt\"");
             // Reset local date to rebuild cache
             database.execSQL("UPDATE `hosts_sources` SET `last_modified_local` = NULL");
             // Update hosts source date format

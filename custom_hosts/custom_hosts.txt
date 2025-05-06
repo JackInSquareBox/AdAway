@@ -7,3 +7,4 @@
 127.0.0.1 yads.yahoo.co.jp
 127.0.0.1 yads.yjtag.yahoo.co.jp
 127.0.0.1 yjtag.yahoo.co.jp
+127.0.0.1 yjtag.yahoo.co.jpasd
